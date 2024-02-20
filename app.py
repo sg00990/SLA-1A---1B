@@ -3,7 +3,7 @@ import datetime
 import json
 
 st.set_page_config(
-    page_title="Tier 2 SLA Questionnaire",
+    page_title="SLA 1A & 1B Questionnaire",
     page_icon="💻",
     layout="wide"
 )
@@ -59,9 +59,9 @@ if experienced_outage == "Yes":
 
 st.write("**Date**")
 survey_date = st.date_input("survey_date", format="MM/DD/YYYY", label_visibility="collapsed")
-st.write("**Additional Comments**")
-survey_text = st.text_area("survey_text", label_visibility="collapsed")
-survey_text = survey_text.replace("\n", "  ").replace("'", "''").replace('"', r'\"')
+#st.write("**Additional Comments**")
+#survey_text = st.text_area("survey_text", label_visibility="collapsed")
+#survey_text = survey_text.replace("\n", "  ").replace("'", "''").replace('"', r'\"')
 
 
 col1, col2, col3 = st.columns(3)
@@ -76,7 +76,7 @@ with col3:
             "sla_1ab_outage_end": outage_end_datetime,
             "sla_1ab_outage_reason": outage_desc,
             "sla_1ab_date": survey_date,
-            "sla_1ab_comments": survey_text
+            #"sla_1ab_comments": survey_text
         }
 
         json_data = json.dumps(data, indent=4, sort_keys=True, default=str)
