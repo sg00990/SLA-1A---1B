@@ -15,11 +15,11 @@ st.write("###")
 
 st.markdown('<p style="font-family:sans-serif; color:#87c440; font-size: 20px; font-weight: bold">SLA 1A/1B</p>', unsafe_allow_html=True)
 
+st.write("**Workstream**")
+workstream = st.selectbox("Workstream", options=["BP", "Impact", "LDAP", "Doc Center", "CDMS", "IC Importers", "Content Manager"], label_visibility="collapsed")
 
 st.write("**Did your team experience a Planned or Unplanned Outage this past week?**")
 experienced_outage = st.radio("experienced_outage", options=["No", "Yes"], label_visibility="collapsed")
-st.write("**Workstream**")
-workstream = st.selectbox("Workstream", options=["BP", "Impact", "LDAP", "Doc Center", "CDMS", "IC Importers", "Content Manager"], label_visibility="collapsed")
 
 outage_start_datetime = None
 outage_end_datetime = None
